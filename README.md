@@ -1,10 +1,12 @@
 # Add Bank Entry
-A prototype I created for adding bank accounts as a payment method. An API call is made to routingnumbers.info go retrieve bank data and display it in the faux check.
+A prototype I created for adding bank accounts as a payment method. An API call is made to routingnumbers.info to retrieve bank data and display it in the faux check.
 
 ![Bank Account Entry Demo](https://joshualondon.github.io/add-bank-form/demo/demo-bank-account-entry.gif)
 
 ## Demo
 https://joshualondon.github.io/add-bank-form/
+
+The demo is base-case scenario and doesn't include error checking or handling.
 
 ### Test Routing Numbers
 - 122242597
