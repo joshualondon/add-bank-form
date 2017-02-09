@@ -1,0 +1,128 @@
+.faux-check {
+  max-width: calc(100% - 12.5rem - .5rem);
+  position: relative;
+  width: calc(100% - 12.5rem - .5rem);
+
+  > div {
+    background: url('../images/wave.jpg') repeat;
+    border-left: 1px solid darken(white, 6%);
+    border-bottom: 1px solid darken(white, 6%);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5em 5em 1em 1.5em;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &.account-radio--savings-checked,
+  &.account-radio--checking-checked {
+    &::after {
+      color: darken(white, 50%);
+      content: '';
+      display: block;
+      font-size: .65em;
+      text-transform: uppercase;
+      position: absolute;
+      top: calc(1rem + .5rem + .75rem - calc(.65rem/2));
+      right: 1.5rem;
+    }
+  }
+
+  &.account-radio--savings-checked::after {
+    content: 'Savings';
+  }
+
+  &.account-radio--checking-checked::after {
+    content: 'Checking';
+  }
+}
+
+.check--names {
+  font-weight: 400;
+
+  .check--nickname {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 1rem 0 .75rem;
+  }
+
+  .check--bank-name {
+    color: darken(white, 76%);
+    font-size: .85rem;
+    font-weight: 100;
+    line-height: 1.5;
+    text-transform: capitalize;
+  }
+}
+
+.check--bank-address {
+  color: darken(white, 50%);
+  font: normal .75rem/1.25 $sans-type;
+  text-transform: capitalize;
+  margin-bottom: 1.75rem;
+  min-height: 2.5rem;
+}
+
+.check--numbers {
+  display: flex;
+
+  .numbers--label {
+    color: darken(white, 50%);
+    font-size: .65em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+  }
+
+  .numbers--value {
+    font-family: $mono-type;
+    font-size: 1rem;
+    transition: .25s;
+
+    &::before,
+    &::after {
+      color: darken(white, 50%);
+      font: 1rem/1 monospace;
+    }
+  }
+}
+
+.check-numbers--routing {
+  margin-right: 1.5em;
+
+  .numbers--value {
+    &::before,
+    &::after {
+      content: '⑆';
+    }
+
+    &::before {
+      padding-right: .25rem;
+    }
+
+    &::after {
+      padding-left: .25rem;
+    }
+  }
+}
+
+.check-numbers--account {
+  .numbers--value {
+    &::after {
+      content: '⑈';
+      font-size: 1.25rem;
+      padding-left: .25rem;
+    }
+  }
+}

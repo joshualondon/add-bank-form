@@ -17,3 +17,17 @@
   width: 1em;
   height: 1em;
 }
+
+.loading--routing-number {
+  position: absolute;
+  right: .75rem;
+  bottom: calc(.5rem + 2px);
+  transition: .125s;
+}
+
+.loading--success-checkmark {
+  position: absolute;
+  right: 1rem;
+  bottom: calc(.5rem + 5px);
+  transition: .125s;
+}
