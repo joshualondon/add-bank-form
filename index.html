@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bank Account Entry</title>
+  <link rel="stylesheet" href="assets/css/bank-account.css">
+</head>
+<body>
+
+  <section class="section--add-bank">
+
+
+
+    <div class="number-entry-wrapper">
+      <fieldset class="numbers--account-routing">
+        <h1>Add Bank Account</h1>
+        <label for="" class="label--routing-number">
+          <span>Routing or Transit Number</span>
+          <input type="number" class="input--routing-number" placeholder="9 digit number">
+          <div class="routing-counter">
+            <span>0</span> of 9
+          </div>
+          <div class="loading loading--routing-number is-hidden"></div>
+          <div class="checkmark loading--success-checkmark is-hidden"></div>
+        </label>
+        <label for="" class="label--account-number">
+          <span>Account Number</span>
+          <input type="number" class="input--account-number">
+        </label>
+      </fieldset>
+
+      <div class="faux-check">
+        <div>
+          <div class="check--names">
+            <div class="check--nickname">Nickname</div>
+            <div class="check--bank-name">Bank Name</div>
+            <address class="check--bank-address">
+              <span class="bank-address--street"></span><br>
+              <span class="bank-address--city"></span>
+              <span class="bank-address--state"></span>
+              <span class="bank-address--zip"></span>
+            </address>
+          </div>
+          <div class="check--numbers">
+            <div class="check-numbers--routing">
+              <div class="numbers--label">Routing Number</div>
+              <div class="numbers--value">123456789</div>
+
+            </div>
+            <div class="check-numbers--account">
+              <div class="numbers--label">Account Number</div>
+              <div class="numbers--value">000000000000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <fieldset class="nickname-type">
+      <div class="inner"><!-- necesary - chrome & FF flexbox bugs for fieldsets -->
+        <label for="" class="label--nickname">
+          <span>Account Nickname</span>
+          <input type="text" class="input--nickname" placeholder="e.g. Joint Account">
+        </label>
+        <div class="option--savings-checking">
+          <div class="radio">
+            <input type="radio" name="account-type" id="account-type--savings">
+            <label for="account-type--savings">Savings</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="account-type" id="account-type--checking">
+            <label for="account-type--checking">Checking</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </section>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="assets/js/bank-account.js"></script>
+  </body>
+</html>

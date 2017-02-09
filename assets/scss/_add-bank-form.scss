@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  input[type="number"],
+  input[type="text"] {
+    border: 1px solid darken(white, 17%);
+    font-size: 1rem;
+    font-weight: 100;
+    padding: .5rem .75rem;
+    transition: .25s;
+    width: 100%;
+
+    &:focus {
+      border-color: $color-focus;
+      outline: none;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: darken(white, 28%);
+      font: .85rem/1 $sans-type;
+    }
+  }
+
+  label {
+    display: block;
+    margin-top: 1.875em;
+    position: relative;
+    width: 11.5rem;
+
+    > span {
+      color: darken(white, 50%);
+      display: block;
+      font-size: .85em;
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.section--add-bank {
+  padding: 3rem;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.number-entry-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.numbers--account-routing {
+  align-self: flex-end;
+  border: none;
+  margin: 0 1.5rem 0 0;
+  padding: 0;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.routing-counter {
+  background: darken(white, 6%);
+  display: inline-block;
+  font-size: .75em;
+  line-height: 1;
+  padding: .25rem .5rem;
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  transition: .125s;
+
+  span {
+    font-weight: 900;
+  }
+}
+
+.loading--routing-number {
+  position: absolute;
+  right: .75rem;
+  bottom: calc(.5rem + 2px);
+  transition: .125s;
+}
+
+.loading--success-checkmark {
+  position: absolute;
+  right: 1rem;
+  bottom: calc(.5rem + 5px);
+  transition: .125s;
+}
+
+.is-hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  max-width: 0;
+  max-height: 0;
+}
+
+
+.faux-check {
+  max-width: calc(100% - 12.5rem - .5rem);
+  position: relative;
+  width: calc(100% - 12.5rem - .5rem);
+
+  > div {
+    background: url('../images/wave.jpg') repeat;
+    border-left: 1px solid darken(white, 6%);
+    border-bottom: 1px solid darken(white, 6%);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5em 5em 1em 1.5em;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &.account-radio--savings-checked,
+  &.account-radio--checking-checked {
+    &::after {
+      color: darken(white, 50%);
+      content: '';
+      display: block;
+      font-size: .65em;
+      text-transform: uppercase;
+      position: absolute;
+      top: calc(1rem + .5rem + .75rem - calc(.65rem/2));
+      right: 1.5rem;
+    }
+  }
+
+  &.account-radio--savings-checked::after {
+    content: 'Savings';
+  }
+
+  &.account-radio--checking-checked::after {
+    content: 'Checking';
+  }
+}
+
+
+.check--names {
+  font-weight: 400;
+
+  .check--nickname {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 1rem 0 .75rem;
+  }
+
+  .check--bank-name {
+    color: darken(white, 76%);
+    font-size: .85rem;
+    font-weight: 100;
+    line-height: 1.5;
+    text-transform: capitalize;
+  }
+}
+
+.check--bank-address {
+  color: darken(white, 50%);
+  font: normal .75rem/1.25 $sans-type;
+  text-transform: capitalize;
+  margin-bottom: 1.75rem;
+  min-height: 2.5rem;
+}
+
+
+.check--numbers {
+  display: flex;
+
+  .numbers--label {
+    color: darken(white, 50%);
+    font-size: .65em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+  }
+
+  .numbers--value {
+    font-family: $mono-type;
+    font-size: 1rem;
+    transition: .25s;
+
+    &::before,
+    &::after {
+      color: darken(white, 50%);
+      font: 1rem/1 monospace;
+    }
+  }
+}
+
+.check-numbers--routing {
+  margin-right: 1.5em;
+
+  .numbers--value {
+    &::before,
+    &::after {
+      content: '⑆';
+    }
+
+    &::before {
+      padding-right: .25rem;
+    }
+
+    &::after {
+      padding-left: .25rem;
+    }
+  }
+}
+
+.check-numbers--account {
+  .numbers--value {
+    &::after {
+      content: '⑈';
+      font-size: 1.25rem;
+      padding-left: .25rem;
+    }
+  }
+}
+
+.nickname-type .inner {
+  border-top: 1px solid darken(white, 6%);
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5em;
+  padding-top: 1em;
+  width: 100%;
+
+  .label--nickname {
+    margin-top: 0;
+  }
+
+  .option--savings-checking {
+    width: 50%;
+  }
+}
+
+.option--savings-checking {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 .75rem 1.5rem;
+
+  .radio {
+    margin-right: 1.5rem;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+
+      + label {
+        cursor: pointer;
+        line-height: 1;
+
+        &::before {
+          background-color: transparent;
+          border: 1px solid darken(white, 17%);
+          border-radius: 50%;
+          content: '';
+          display: inline-block;
+          width: 17px;
+          height: 17px;
+          margin: 0 .5em 0 0;
+          position: relative;
+          transition: .25s;
+          transform: translateY(4px);
+        }
+      }
+
+      &:checked {
+        + label::before {
+          background-color: $color-focus;
+          border-color: $color-focus;
+        }
+      }
+
+      &:hover {
+        + label::before {
+          background-color: darken(white, 17%);
+        }
+      }
+
+      &:checked:hover {
+        + label::before {
+          background-color: $color-focus;
+        }
+      }
+    }
+
+    label {
+      color: darken(white, 50%);
+      display: inline-block;
+      font-size: .85rem;
+      width: auto;
+    }
+  }
+}

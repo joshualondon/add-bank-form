@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+$mono-type: 'Source Code Pro', monospace;
+$sans-type: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+body {
+  color: darken(white, 83%);
+  font: 1rem/1 $sans-type;
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
