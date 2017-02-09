@@ -1,0 +1,59 @@
+.option--savings-checking {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 .75rem 1.5rem;
+
+  .radio {
+    margin-right: 1.5rem;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+
+      + label {
+        cursor: pointer;
+        line-height: 1;
+
+        &::before {
+          background-color: transparent;
+          border: 1px solid darken(white, 17%);
+          border-radius: 50%;
+          content: '';
+          display: inline-block;
+          width: 17px;
+          height: 17px;
+          margin: 0 .5em 0 0;
+          position: relative;
+          transition: .25s;
+          transform: translateY(4px);
+        }
+      }
+
+      &:checked {
+        + label::before {
+          background-color: $color-focus;
+          border-color: $color-focus;
+        }
+      }
+
+      &:hover {
+        + label::before {
+          background-color: darken(white, 17%);
+        }
+      }
+
+      &:checked:hover {
+        + label::before {
+          background-color: $color-focus;
+        }
+      }
+    }
+
+    label {
+      color: darken(white, 50%);
+      display: inline-block;
+      font-size: .85rem;
+      width: auto;
+    }
+  }
+}

@@ -1,11 +1,21 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+* {
+  box-sizing: border-box; }
+
 body {
   color: #2b2b2b;
   font: 1rem/1 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; }
   body h1 {
     font-size: 1rem;
     font-weight: 400; }
+
+.is-hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  max-width: 0;
+  max-height: 0; }
 
 @keyframes spin {
   0% {
@@ -21,6 +31,18 @@ body {
   width: 1em;
   height: 1em; }
 
+.loading--routing-number {
+  position: absolute;
+  right: .75rem;
+  bottom: calc(.5rem + 2px);
+  transition: .125s; }
+
+.loading--success-checkmark {
+  position: absolute;
+  right: 1rem;
+  bottom: calc(.5rem + 5px);
+  transition: .125s; }
+
 .checkmark {
   border: solid #48D460;
   border-width: 0 3px 3px 0;
@@ -28,9 +50,6 @@ body {
   width: 8px;
   height: 13px;
   transform: rotate(45deg); }
-
-* {
-  box-sizing: border-box; }
 
 fieldset {
   border: none;
@@ -68,24 +87,6 @@ fieldset {
       font-size: .85em;
       margin-bottom: .5rem; }
 
-.section--add-bank {
-  padding: 3rem;
-  max-width: 768px;
-  margin: 0 auto; }
-
-.number-entry-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.numbers--account-routing {
-  align-self: flex-end;
-  border: none;
-  margin: 0 1.5rem 0 0;
-  padding: 0; }
-  .numbers--account-routing h1 {
-    margin-top: 0; }
-
 .routing-counter {
   background: #f0f0f0;
   display: inline-block;
@@ -99,24 +100,42 @@ fieldset {
   .routing-counter span {
     font-weight: 900; }
 
-.loading--routing-number {
-  position: absolute;
-  right: .75rem;
-  bottom: calc(.5rem + 2px);
-  transition: .125s; }
-
-.loading--success-checkmark {
-  position: absolute;
-  right: 1rem;
-  bottom: calc(.5rem + 5px);
-  transition: .125s; }
-
-.is-hidden {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  max-width: 0;
-  max-height: 0; }
+.option--savings-checking {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 .75rem 1.5rem; }
+  .option--savings-checking .radio {
+    margin-right: 1.5rem; }
+    .option--savings-checking .radio input[type="radio"] {
+      position: absolute;
+      opacity: 0; }
+      .option--savings-checking .radio input[type="radio"] + label {
+        cursor: pointer;
+        line-height: 1; }
+        .option--savings-checking .radio input[type="radio"] + label::before {
+          background-color: transparent;
+          border: 1px solid #d4d4d4;
+          border-radius: 50%;
+          content: '';
+          display: inline-block;
+          width: 17px;
+          height: 17px;
+          margin: 0 .5em 0 0;
+          position: relative;
+          transition: .25s;
+          transform: translateY(4px); }
+      .option--savings-checking .radio input[type="radio"]:checked + label::before {
+        background-color: #1B8BFF;
+        border-color: #1B8BFF; }
+      .option--savings-checking .radio input[type="radio"]:hover + label::before {
+        background-color: #d4d4d4; }
+      .option--savings-checking .radio input[type="radio"]:checked:hover + label::before {
+        background-color: #1B8BFF; }
+    .option--savings-checking .radio label {
+      color: gray;
+      display: inline-block;
+      font-size: .85rem;
+      width: auto; }
 
 .faux-check {
   max-width: calc(100% - 12.5rem - .5rem);
@@ -204,6 +223,24 @@ fieldset {
   font-size: 1.25rem;
   padding-left: .25rem; }
 
+.section--add-bank {
+  padding: 3rem;
+  max-width: 768px;
+  margin: 0 auto; }
+
+.number-entry-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.numbers--account-routing {
+  align-self: flex-end;
+  border: none;
+  margin: 0 1.5rem 0 0;
+  padding: 0; }
+  .numbers--account-routing h1 {
+    margin-top: 0; }
+
 .nickname-type .inner {
   border-top: 1px solid #f0f0f0;
   display: flex;
@@ -213,42 +250,3 @@ fieldset {
   width: 100%; }
   .nickname-type .inner .label--nickname {
     margin-top: 0; }
-  .nickname-type .inner .option--savings-checking {
-    width: 50%; }
-
-.option--savings-checking {
-  display: flex;
-  align-items: flex-end;
-  margin: 0 0 .75rem 1.5rem; }
-  .option--savings-checking .radio {
-    margin-right: 1.5rem; }
-    .option--savings-checking .radio input[type="radio"] {
-      position: absolute;
-      opacity: 0; }
-      .option--savings-checking .radio input[type="radio"] + label {
-        cursor: pointer;
-        line-height: 1; }
-        .option--savings-checking .radio input[type="radio"] + label::before {
-          background-color: transparent;
-          border: 1px solid #d4d4d4;
-          border-radius: 50%;
-          content: '';
-          display: inline-block;
-          width: 17px;
-          height: 17px;
-          margin: 0 .5em 0 0;
-          position: relative;
-          transition: .25s;
-          transform: translateY(4px); }
-      .option--savings-checking .radio input[type="radio"]:checked + label::before {
-        background-color: #1B8BFF;
-        border-color: #1B8BFF; }
-      .option--savings-checking .radio input[type="radio"]:hover + label::before {
-        background-color: #d4d4d4; }
-      .option--savings-checking .radio input[type="radio"]:checked:hover + label::before {
-        background-color: #1B8BFF; }
-    .option--savings-checking .radio label {
-      color: gray;
-      display: inline-block;
-      font-size: .85rem;
-      width: auto; }

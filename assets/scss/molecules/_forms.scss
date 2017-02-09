@@ -1,0 +1,45 @@
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  input[type="number"],
+  input[type="text"] {
+    border: 1px solid darken(white, 17%);
+    font-size: 1rem;
+    font-weight: 100;
+    padding: .5rem .75rem;
+    transition: .25s;
+    width: 100%;
+
+    &:focus {
+      border-color: $color-focus;
+      outline: none;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: darken(white, 28%);
+      font: .85rem/1 $sans-type;
+    }
+  }
+
+  label {
+    display: block;
+    margin-top: 1.875em;
+    position: relative;
+    width: 11.5rem;
+
+    > span {
+      color: darken(white, 50%);
+      display: block;
+      font-size: .85em;
+      margin-bottom: .5rem;
+    }
+  }
+}
